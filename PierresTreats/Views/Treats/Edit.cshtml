@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+
+<br />
+<h3>Edit @Model.Name?</h3>
+<br />
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(selectedTreat => selectedTreat.TreatId)
+  @Html.EditorFor(selectedTreat => selectedTreat.Name, new { htmlAttributes = new { @class = "form-control" } })
+  <input type="submit" value="Save Changes" class="btn btn-outline-success" />
+}
+<hr />
+<p class="new"><a href='/treats/'>Back <span class="material-symbols-outlined">arrow_back</span></a></p>
