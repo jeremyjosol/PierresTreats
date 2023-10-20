@@ -40,5 +40,21 @@ namespace RecipeBook.Controllers
       }
       return View(usersWithRole);
     }
+
+    public IActionResult Create() => View();
+      
+    [HttpPost]
+    public async Task<IActionResult> Create([Required] string name)
+    {
+      if (ModelState.IsValid)
+      {
+        IdentityResult result = await _roleManager.CreateAsync(new IdentityRole(name));
+        if (result.Succeeded)
+        return RedirectToAction("Index");
+        else
+        Errors(result);
+      }
+      return View(name);
+    }
   }
 }
