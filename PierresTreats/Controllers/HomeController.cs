@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 
-namespace RecipeBook.Controllers
+namespace PierresTreats.Controllers
 {
   public class HomeController : Controller
   {
