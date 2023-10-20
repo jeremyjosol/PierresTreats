@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using RecipeBook.Models;
+using PierresTreats.Models;
 
 namespace PierresTreats.Models
 {
