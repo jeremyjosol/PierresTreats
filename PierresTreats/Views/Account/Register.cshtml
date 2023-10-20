@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.ViewModels
+
+@model RegisterViewModel
+
+<h2>Create Account</h2>
+<hr />
+
+@if(!ViewData.ModelState.IsValid) 
+{
+  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+  @Html.TextBoxFor(user => user.Email, new { placeholder = "Email Address", @class = "form-control" })
+  <br />
+  @Html.EditorFor(user => user.Password, new { htmlAttributes= new { placeholder = "Password", @class = "form-control" }})
+  <br />
+  @Html.EditorFor(user => user.ConfirmPassword, new { htmlAttributes = new { placeholder = "Confirm Password", @class = "form-control" }})
+  <br />
+  <input class="btn btn-outline-success" type="submit" value="Register" />
+}
+
+<p>@Html.ActionLink("Back to accounts page", "Index")</p>
