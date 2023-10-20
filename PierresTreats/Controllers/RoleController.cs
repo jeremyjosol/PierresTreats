@@ -56,5 +56,60 @@ namespace RecipeBook.Controllers
       }
       return View(name);
     }
+
+    [HttpGet]
+    public IActionResult Assign()
+    {
+      List<IdentityRole> roles = _roleManager.Roles.ToList();
+      List<ApplicationUser> users = _userManager.Users.ToList();
+      ViewBag.RolesList = new SelectList(roles, "Name", "Name");
+      ViewBag.UsersList = new SelectList(users, "Id", "UserName");
+      return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<ActionResult> Assign(string UserId, string RoleName)
+    {
+      try
+      {
+        if (!string.IsNullOrEmpty(UserId) && !string.IsNullOrEmpty(RoleName))
+        {
+          ApplicationUser user = await _userManager.FindByIdAsync(UserId);
+          if (user != null)
+          {
+            // interesting case of a type cast conversion error, cannot do List but IList
+            IList<string> currentRoles = await _userManager.GetRolesAsync(user);
+            if (currentRoles.Count > 0)
+            {
+              IdentityResult removeRole = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+              if (!removeRole.Succeeded)
+              {
+                Errors(removeRole);
+                return View();
+              }
+            }
+            if (await _roleManager.RoleExistsAsync(RoleName))
+            {
+              IdentityResult addRole = await _userManager.AddToRoleAsync(user, RoleName);
+              if (addRole.Succeeded)
+              {
+                return RedirectToAction("Index");
+              }
+              else
+              {
+                Errors(addRole);
+                return View();
+              }
+            }
+          }
+        }
+        return View();
+      }
+      catch
+      {
+        return View();
+      }
+    }
   }
 }
