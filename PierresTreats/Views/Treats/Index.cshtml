@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+
+<h2>Treats</h2>
+<hr />
+
+@if(@Model.Count == 0)
+{
+  <p class="zero">* No Treats available.</p>
+}
+else 
+{
+  @foreach(Treat added in Model)
+  {
+    <h5>&rarr;	@Html.ActionLink($"{added.Name}", "Details", new { id = added.TreatId })</h5>
+  }
+}
+<br />
+<p class="new"><a href='/treats/create'>New <span class="material-symbols-outlined">Add_circle</span></a></p>
