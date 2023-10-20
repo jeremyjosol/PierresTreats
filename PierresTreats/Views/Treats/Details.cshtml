@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat;
+@using PierresTreats.Models;
+
+<h3 class="name">@Html.DisplayFor(selectedTreat => selectedTreat.Name)</h3>
+<hr/>
+<p><strong>Flavors</strong></p>
+
+@if (Model.JoinEntities.Count == 0)
+{
+  <p class="zero">* No flavors available.</p>
+}
+else
+{
+  @foreach (TreatFlavor available in Model.JoinEntities)
+  {
+    @using (Html.BeginForm("DeleteJoin", "Flavors"))
+    {
+    @Html.Hidden("joinId", @available.TreatFlavorId)
+    <p class="indent">
+      &rarr;  @Html.ActionLink($"{available.Flavor.Type}", "Details", "Flavors", new { id = available.FlavorId })    
+      <input type="submit" value="X" class="btn btn-outline-danger btn-sm"/>
+    </p>
+    }
+  }
+}

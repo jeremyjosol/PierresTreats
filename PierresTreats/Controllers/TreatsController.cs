@@ -43,5 +43,14 @@ namespace SweetAndSavoryTreats.Controllers
         return RedirectToAction("Index");
       }
     }
+    
+    public ActionResult Details(int id)
+    {
+      Treat selectedTreat = _db.Treats
+                                   .Include(treat => treat.JoinEntities)
+                                   .ThenInclude(joinEntity => joinEntity.Flavor)
+                                   .FirstOrDefault(treat => treat.TreatId == id);
+      return View(selectedTreat);
+    }
   }
 }
