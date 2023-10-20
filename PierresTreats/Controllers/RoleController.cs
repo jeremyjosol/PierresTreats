@@ -27,5 +27,18 @@ namespace RecipeBook.Controllers
       foreach (IdentityError error in result.Errors)
       ModelState.AddModelError("", error.Description);
     }
+
+    public ViewResult Index()
+    {
+      List<IdentityRole> roles = _roleManager.Roles.ToList();
+      Dictionary<IdentityRole, List<ApplicationUser>> usersWithRole = new Dictionary<IdentityRole, List<ApplicationUser>>();
+
+      foreach (IdentityRole role in roles)
+      {
+        List<ApplicationUser> usersInRole = _userManager.GetUsersInRoleAsync(role.Name).Result.ToList();
+        usersWithRole.Add(role, usersInRole);
+      }
+      return View(usersWithRole);
+    }
   }
 }
