@@ -88,5 +88,14 @@ namespace SweetAndSavoryTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      TreatFlavor joinEntity = _db.TreatFlavors.FirstOrDefault(join => join.TreatFlavorId == joinId);
+      _db.TreatFlavors.Remove(joinEntity);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = joinEntity.TreatId });
+    }
   }
 }
