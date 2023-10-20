@@ -111,5 +111,54 @@ namespace RecipeBook.Controllers
         return View();
       }
     }
+    
+    [HttpGet]
+    public IActionResult Delete()
+    {
+      List<IdentityRole> roles = _roleManager.Roles.ToList();
+      List<ApplicationUser> users = _userManager.Users.ToList();
+      ViewBag.RolesList = new SelectList(roles, "Name", "Name");
+      ViewBag.UsersList = new SelectList(users, "Id", "UserName");
+      return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<ActionResult> Delete(string UserId, string RoleName)
+    {
+      try
+      {
+        if (!string.IsNullOrEmpty(UserId) && !string.IsNullOrEmpty(RoleName))
+        {
+          ApplicationUser user = await _userManager.FindByIdAsync(UserId);
+          if (user != null)
+          {
+            if (await _userManager.IsInRoleAsync(user, RoleName))
+            {
+              IdentityResult removeResult = await _userManager.RemoveFromRoleAsync(user, RoleName);
+              if (removeResult.Succeeded)
+              {
+                return RedirectToAction("Index");
+              }
+              else
+              {
+                Errors(removeResult);
+                return View();
+              }
+            }
+            else
+            {
+              ModelState.AddModelError("", "User does not belong to specified role.");
+              return View();
+            }
+          }
+        }
+        return View();
+      }
+      catch
+      {
+        return View();
+      }
+    }
   }
 }
