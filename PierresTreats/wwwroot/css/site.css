@@ -18,15 +18,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
-  font-size: 1.2em;
-  color: rgb(255, 255, 255);
+  font-size: 1.3em;
+  color: rgb(49, 49, 49);
   background-attachment: fixed;
-  font-family: 'Marcellus', serif;
+  font-family: 'Playfair', serif;
 }
 
 body::before {
   content: "";
-  background: rgba(0, 0, 0, 0.241); 
+  background: rgba(255, 255, 255, 0.722); 
   position: absolute;
   top: 0;
   left: 0;
@@ -36,27 +36,20 @@ body::before {
 }
 
 h1 {
-  /* background-image: linear-gradient(to right, rgb(29, 197, 248), rgb(255, 255, 255), rgb(0, 60, 255)); */
-  /* -webkit-background-clip: text;  */
-  /* background-clip: text;
-  color: transparent; */
-  font-size: 100px;
+  font-size: 85px;
   font-weight: bolder;
   margin: auto;
   margin-top: 5px;
   margin-left: 25px;
+  font-family: 'Playfair Display', serif;
 }
 
 h2 {
-  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(170, 222, 255), rgb(227, 223, 255));
-  -webkit-background-clip: text; 
-  background-clip: text;
-  color: transparent;
   font-size: 50px;
 }
 
 a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 28px;
 }
@@ -70,7 +63,6 @@ p {
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.585);
   height: 375px;
   max-height: 385px;
   width: 850px;
@@ -346,9 +338,11 @@ p {
 .left {
   float: left;
   width: 50%;
+  overflow: auto;
 }
 
 .right {
   float: right;
-  width: 50%;
+  width: 50%;  
+  overflow: auto;
 }
