@@ -24,6 +24,17 @@ body {
   font-family: 'Marcellus', serif;
 }
 
+body::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.334); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; 
+}
+
 h1 {
   /* background-image: linear-gradient(to right, rgb(29, 197, 248), rgb(255, 255, 255), rgb(0, 60, 255)); */
   /* -webkit-background-clip: text;  */
