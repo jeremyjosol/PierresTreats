@@ -67,7 +67,7 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public ActionResult Register(Treat selectedTreat, Flavor selectedFlavor)
+    public ActionResult AddTreat(Treat selectedTreat, Flavor selectedFlavor)
     {
       #nullable enable
       TreatFlavor? joinEntity = _db.TreatFlavors.FirstOrDefault(join => (join.TreatId == selectedTreat.TreatId && join.FlavorId == selectedFlavor.FlavorId));
@@ -77,7 +77,7 @@ namespace PierresTreats.Controllers
         _db.TreatFlavors.Add(new TreatFlavor() { TreatId = selectedTreat.TreatId, FlavorId = selectedFlavor.FlavorId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Details", new { id = selectedFlavor.FlavorId });
+      return RedirectToAction("Details", "Flavors", new { id = selectedFlavor.FlavorId });
     }
 
     public ActionResult Edit(int id)

@@ -9,23 +9,21 @@
 @using PierresTreats.Models;
 
 <h1>PATISSERIE</h1>
+
 <br />
+<h6>Create a new 
+<br />
+@Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
+<br />
+to update the Portal.</h6>
+
 
 @if (ViewBag.Treats.Count == 0 && ViewBag.Flavors.Count == 0)
 { 
   <br />
-  <h5>Welcome to your Portal.</h5>
-  <br />
-  <br />
   <h6>Currently, there are no
   <br /> @Html.ActionLink("Treats", "Index", "Treats") or @Html.ActionLink("Flavors", "Index", "Flavors")
   <br /> in your portal.</h6>
-  <br />
-  <h6>Create a new 
-  <br />
-  @Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
-  <br />
-  to update the Portal.</h6>
 }
 
 else
@@ -59,5 +57,4 @@ else
   
   </div>
 }
-
 

@@ -350,3 +350,7 @@ p {
   width: 50%;  
   overflow: auto;
 }
+
+.nav-item .nav-link:hover {
+  color: rgb(241, 178, 125)
+}

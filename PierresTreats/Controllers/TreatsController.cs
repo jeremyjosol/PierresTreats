@@ -75,7 +75,7 @@ namespace SweetAndSavoryTreats.Controllers
         _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = selectedFlavor.FlavorId, TreatId = selectedTreat.TreatId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Details", "Engineers", new { id = selectedTreat.TreatId });
+      return RedirectToAction("Details", "Treats", new { id = selectedTreat.TreatId });
     }
 
     public ActionResult Edit(int id)
