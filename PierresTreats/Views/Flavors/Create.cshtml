@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h2>New Flavor</h2>
+<hr/>
+
+@using (Html.BeginForm())
+{
+  <h6>@Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })</h6>
+  @Html.TextBoxFor(model => model.Type, new { placeholder= "Type of Flavor", @class = "form-control" })
+  <input type="submit" value="Add Flavor" class="btn btn-outline-primary" />
+}
+<br />
+<p class="new"><a href='/flavors/'>Back <span class="material-symbols-outlined">arrow_back</span></a></p>
