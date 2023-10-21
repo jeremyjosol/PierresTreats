@@ -11,9 +11,6 @@ Lorem Ipsum
 <html>
 <img src="PierresTreats/wwwroot/img/PierresIndexUser.jpg">
 
-<html>
-<img src="PierresTreats/wwwroot/img/PierresAuthenticated.jpg">
-
 ## Technologies Used
 * _Github_
 * _VSCode_
