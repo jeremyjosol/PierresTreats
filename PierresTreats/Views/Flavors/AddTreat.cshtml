@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h2>Add Treat</h2>
+
+<h4>@Html.DisplayFor(model => model.Type)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.Label("-- Select Flavor --")
+  <br />
+  @Html.DropDownList("TreatId", null, new { @class = "form-control", required = "required" })
+  <input type="submit" value="Add Treat" class="btn btn-outline-success" />
+}
+<hr />
+<p class="new"><a href='/flavors/'>Back <span class="material-symbols-outlined">arrow_back</span></a></p>
