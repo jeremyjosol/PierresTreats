@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+
+<h2>Flavors</h2>
+<hr />
+
+@if(@Model.Count == 0)
+{
+  <p class="zero">* No Flavors available.</p>
+}
+else 
+{
+  @foreach(Flavor added in Model)
+  {
+    <h5>&rarr;	@Html.ActionLink($"{added.Type}", "Details", new { id = added.FlavorId })</h5>
+  }
+}
+<br />
+<p class="new"><a href='/flavors/create'>New <span class="material-symbols-outlined">Add_circle</span></a></p>
