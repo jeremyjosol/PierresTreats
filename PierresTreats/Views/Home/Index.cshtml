@@ -6,4 +6,48 @@
     ViewData["Title"] = "Home Page";
 }
 
+@using PierresTreats.Models;
+
 <h1>PATISSERIE</h1>
+
+
+@if (ViewBag.Treats.Count == 0 && ViewBag.Flavors.Count == 0)
+{ 
+  <br />
+  <h5>Welcome to your Portal.</h5>
+  <br />
+  <br />
+  <h6>Currently, there are no
+  <br /> Treats or Flavors
+  <br /> in your portal.</h6>
+  <br />
+  <h6>Create a new 
+  <br />
+  @Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
+  <br />
+  to update the Portal.</h6>
+}
+
+else
+{
+  @if (ViewBag.Treats.Count > 0)
+  {
+    <h2>Treats</h2>
+    <hr />
+    @foreach (Treat added in ViewBag.Treats)
+    {
+      <h5>&rarr;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</h5>
+    }
+  }
+  @if (ViewBag.Flavors.Count > 0)
+  {
+    <br />
+    <h2>Flavors</h2>
+    <hr />
+    @foreach (Flavor added in ViewBag.Flavors)
+    {
+      <h5>&rarr;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</h5>
+    }
+  }
+}
+

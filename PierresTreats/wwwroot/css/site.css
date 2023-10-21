@@ -26,7 +26,7 @@ body {
 
 body::before {
   content: "";
-  background: rgba(0, 0, 0, 0.334); 
+  background: rgba(0, 0, 0, 0.241); 
   position: absolute;
   top: 0;
   left: 0;
@@ -70,15 +70,16 @@ p {
 }
 
 .container {
-  /* background-color: rgba(0, 0, 0, 0.691); */
+  /* background-color: rgba(255, 255, 255, 0.691); */
   height: 375px;
   max-height: 385px;
-  width: 500px;
+  width: 850px;
   max-width: 500px;
   margin: auto;
   margin-top: 150px;
   border-radius: 10px;
   text-align: center;
+  overflow: auto;
 }
 
 .navigation {
@@ -96,13 +97,13 @@ p {
 
 @media (max-width: 992px) {
   .container {
-    width: 342px;
+    width: 800px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    width: 325px;
+    width: 750px;
   }
 
   .container .btn {
@@ -116,15 +117,14 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 25px;
+  .container h1 {
+    font-size: 80px;
   }
 }
 
 @media (max-width: 656px) {
   .container {
-    width: 300px;
+    width: 650px;
     margin: auto;
   }
 
@@ -140,15 +140,14 @@ p {
 
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 20px;
+  .container h1 {
+    font-size: 65px;
   }
 }
 
 @media (max-width: 600px) {
   .container {
-    width: 290px;
+    width: 575px;
     margin: auto;
   }
 
@@ -163,15 +162,15 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
+  .container h1 {
     margin: auto;
-    margin-left: 10px;
+    font-size: 50px;
   }
 }
 
 @media (max-width: 560px) {
   .container {
-    width: 275px;
+    width: 500px;
     height: 350px;
     margin: auto;
   }
@@ -187,15 +186,14 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 10px;
+  .container h1 {
+    font-size: 50px;
   }
 }
 
 @media (max-width: 556px) {
   .container {
-    width: 275px;
+    width: 500px;
     height: 350px;
     margin: auto;
   }
@@ -211,15 +209,14 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 3px;
+  .container h1 {
+    font-size: 50px;
   }
 }
 
 @media (max-width: 525px) {
   .container {
-    width: 265px;
+    width: 500px;
     height: 350px;
     margin: auto;
   }
@@ -235,16 +232,15 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 5px;
+  .container h1 {
+    font-size: 50px;
   }
 }
 
 
 @media (max-width: 444px) {
   .container {
-    width: 255px;
+    width: 400px;
     height: 350px;
     margin: auto;
   }
@@ -260,15 +256,14 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 2px;
+  .container h1 {
+    font-size: 50px;
   }
 }
 
 @media (max-width: 338px) {
   .container {
-    width: 250px;
+    width: 300px;
     height: 350px;
     margin: auto;
   }
@@ -284,9 +279,8 @@ p {
     padding-right: 18px;
   }
 
-  .container .indent {
-    margin: auto;
-    margin-left: 1px;
+  .container h1 {
+    font-size: 50px;
   }
 }
 
