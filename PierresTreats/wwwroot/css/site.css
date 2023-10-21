@@ -54,6 +54,13 @@ a {
   font-size: 28px;
 }
 
+#text-dark {
+  font-size: 1em;
+  color: black;
+  float: right;
+  margin-right: 10px;
+}
+
 a:hover {
   color: rgb(0, 221, 255);
 }

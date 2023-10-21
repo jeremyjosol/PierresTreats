@@ -40,7 +40,7 @@ else
     <hr />
     @foreach (Treat added in ViewBag.Treats)
     {
-      <h5>&rarr;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</h5>
+      <h5>&ndash;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</h5>
     }
   }
 
@@ -54,7 +54,7 @@ else
     <hr />
     @foreach (Flavor added in ViewBag.Flavors)
     {
-      <h5>&rarr;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</h5>
+      <h5>&ndash;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</h5>
     }
   }
   
