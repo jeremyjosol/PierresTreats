@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<br />
+<h3>Delete @Model.Type?</h3>
+<br />
+@using(Html.BeginForm())
+{
+  <input type="submit" value="Delete" class="btn btn-danger" />
+}
+<hr />
+<p class="new"><a href='/flavors/'>Back <span class="material-symbols-outlined">arrow_back</span></a></p>
