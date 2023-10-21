@@ -14,7 +14,324 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  background-image: url(../img/PierresTreats.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: black;
+  font-size: 1.2em;
   color: white;
+  background-attachment: fixed;
+  font-family: 'Marcellus', serif;
+}
+
+h1 {
+  /* background-image: linear-gradient(to right, rgb(29, 197, 248), rgb(255, 255, 255), rgb(0, 60, 255)); */
+  /* -webkit-background-clip: text;  */
+  /* background-clip: text;
+  color: transparent; */
+  font-size: 100px;
+  font-weight: bolder;
+  margin: auto;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+h2 {
+  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(170, 222, 255), rgb(227, 223, 255));
+  -webkit-background-clip: text; 
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+a:hover {
+  color: rgb(0, 221, 255);
+}
+
+p {
+  margin-bottom: 2px;
+}
+
+.container {
+  /* background-color: rgba(0, 0, 0, 0.691); */
+  height: 375px;
+  max-height: 385px;
+  width: 500px;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 150px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.navigation {
+  margin: auto;
+  margin: 75px 0 0 1px;
+  height: 315px;
+  max-height: 350px;
+  width: 225px;
+  position: fixed;
+}
+
+.navbar-brand {
+  font-size: 38px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 342px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 325px;
+  }
+
+  .container .btn {
+    width: 300px; 
+  }
+
+  .container .btn-outline-danger {
+    width: 10px;
+    margin: auto;
+    margin-left: 10px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 656px) {
+  .container {
+    width: 300px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 280px;
+  }
+  
+  .container .btn-outline-danger {
+    width: 10px;
+    margin: auto;
+    margin-left: 12px;
+    padding-right: 18px;
+
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 290px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 280px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 10px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: 275px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 250px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 15px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 556px) {
+  .container {
+    width: 275px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 250px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 15px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 525px) {
+  .container {
+    width: 265px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 245px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 2px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 5px;
+  }
+}
+
+
+@media (max-width: 444px) {
+  .container {
+    width: 255px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 230px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 2px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 2px;
+  }
+}
+
+@media (max-width: 338px) {
+  .container {
+    width: 250px;
+    height: 350px;
+    margin: auto;
+  }
+
+  .container .btn {
+    width: 240px;
+  }
+
+  .container .btn-outline-danger {
+    width: 5px;
+    margin: auto;
+    margin-left: 1px;
+    padding-right: 18px;
+  }
+
+  .container .indent {
+    margin: auto;
+    margin-left: 1px;
+  }
+}
+
+.form-control
+{
+  text-align: center;
+}
+
+.btn {
+  width: 325px;
+  margin-top: 5px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.index-new {
+  margin: auto;
+  font-size: 40px;
+}
+
+.new {
+  margin: auto;
+  font-size: 40px;
+}
+
+.zero {
+  color: rgba(246, 78, 78, 0.864);
+}
+
+.btn-outline-danger {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: none;
+  margin: auto;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.btn-outline-danger:hover {
+  background-color: transparent;
+  color: red;
+}
+
+.indent {
+  margin: auto;
+  margin-left: 35px;
+}
+
+.name {
+  font-size: 40px;
+  font-weight: bolder;
 }
