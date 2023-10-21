@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using System.Linq;
 
 namespace SweetAndSavoryTreats.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -16,6 +18,7 @@ namespace SweetAndSavoryTreats.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Treat> pierresTreats = _db.Treats.ToList();
@@ -33,7 +36,7 @@ namespace SweetAndSavoryTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-        ViewBag.EngineerId = new SelectList(_db.Flavors, "FlavorId", "Type");
+        ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
         return View(newTreat);
       }
       else
@@ -44,6 +47,7 @@ namespace SweetAndSavoryTreats.Controllers
       }
     }
     
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Treat selectedTreat = _db.Treats

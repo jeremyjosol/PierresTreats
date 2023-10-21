@@ -1,12 +1,17 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 using PierresTreats.Models;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace PierresTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly PierresTreatsContext _db;
@@ -15,6 +20,7 @@ namespace PierresTreats.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Flavor> allFlavors = _db.Flavors.ToList();
@@ -32,7 +38,7 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-        ViewBag.MachineId = new SelectList(_db.Treats, "TreatId", "Name");
+        ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
         return View(newFlavor);
       }
       else
@@ -43,6 +49,7 @@ namespace PierresTreats.Controllers
       }
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Flavor selectedFlavor = _db.Flavors

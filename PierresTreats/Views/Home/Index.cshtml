@@ -30,6 +30,9 @@
 
 else
 {
+
+  <div class="left">
+
   @if (ViewBag.Treats.Count > 0)
   {
     <h2>Treats</h2>
@@ -39,9 +42,13 @@ else
       <h5>&rarr;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</h5>
     }
   }
+
+  </div>
+
+  <div class="right">
+
   @if (ViewBag.Flavors.Count > 0)
   {
-    <br />
     <h2>Flavors</h2>
     <hr />
     @foreach (Flavor added in ViewBag.Flavors)
@@ -49,5 +56,8 @@ else
       <h5>&rarr;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</h5>
     }
   }
+  
+  </div>
 }
+
 
