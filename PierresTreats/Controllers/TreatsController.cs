@@ -18,7 +18,6 @@ namespace SweetAndSavoryTreats.Controllers
       _db = db;
     }
 
-    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Treat> pierresTreats = _db.Treats.ToList();

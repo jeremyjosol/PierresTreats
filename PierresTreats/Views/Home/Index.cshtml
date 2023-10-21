@@ -10,12 +10,27 @@
 
 <h1>PATISSERIE</h1>
 
-<br />
-<h6>Create a new 
-<br />
-@Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
-<br />
-to update the Portal.</h6>
+@if(User.Identity.IsAuthenticated)
+{
+  <br />
+  <h6>Create a new 
+  <br />
+  @Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
+  <br />
+  to update the Portal.</h6>
+}
+
+@if (!User.Identity.IsAuthenticated)
+{
+  <br />
+  <h6>Please @Html.ActionLink("log in", "Login", "Account")
+  <br />
+  to create a new 
+  <br />
+  @Html.ActionLink("Treat", "Create", "Treats") or @Html.ActionLink("Flavor", "Create", "Flavors") 
+  <br />
+  to update the Portal.</h6>
+}
 
 
 @if (ViewBag.Treats.Count == 0 && ViewBag.Flavors.Count == 0)
