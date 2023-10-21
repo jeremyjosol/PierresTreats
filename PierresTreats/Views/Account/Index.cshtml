@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-<h2>Account</h2>
+<h2><span class="material-symbols-outlined">person</span> Account</h2>
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
@@ -17,4 +17,4 @@ else
   <p>@Html.ActionLink("Register", "Register")</p>
   <p>@Html.ActionLink("Log in", "Login")</p>
 }
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p class="new"><a href='/flavors/'><span class="material-symbols-outlined">arrow_back</span></a></p>

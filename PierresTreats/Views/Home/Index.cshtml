@@ -10,7 +10,6 @@
 
 <h1>PATISSERIE</h1>
 <br />
-<br />
 
 @if (ViewBag.Treats.Count == 0 && ViewBag.Flavors.Count == 0)
 { 
@@ -19,7 +18,7 @@
   <br />
   <br />
   <h6>Currently, there are no
-  <br /> Treats or Flavors
+  <br /> @Html.ActionLink("Treats", "Index", "Treats") or @Html.ActionLink("Flavors", "Index", "Flavors")
   <br /> in your portal.</h6>
   <br />
   <h6>Create a new 
@@ -36,11 +35,11 @@ else
 
   @if (ViewBag.Treats.Count > 0)
   {
-    <h2>Treats</h2>
+    <h2>@Html.ActionLink("Treats", "Index", "Treats")</h2>
     <hr />
     @foreach (Treat added in ViewBag.Treats)
     {
-      <h5>&ndash;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</h5>
+      <p>&ndash;	 @Html.ActionLink(added.Name, "Details", "Treats", new { id = added.TreatId })</p>
     }
   }
 
@@ -50,11 +49,11 @@ else
 
   @if (ViewBag.Flavors.Count > 0)
   {
-    <h2>Flavors</h2>
+    <h2>@Html.ActionLink("Flavors", "Index", "Flavors")</h2>
     <hr />
     @foreach (Flavor added in ViewBag.Flavors)
     {
-      <h5>&ndash;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</h5>
+      <p>&ndash;	 @Html.ActionLink(added.Type, "Details", "Flavors", new { id = added.FlavorId })</p>
     }
   }
   

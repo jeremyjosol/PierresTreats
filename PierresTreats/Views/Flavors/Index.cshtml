@@ -15,8 +15,8 @@ else
 {
   @foreach(Flavor added in Model)
   {
-    <h5>&rarr;	@Html.ActionLink($"{added.Type}", "Details", new { id = added.FlavorId })</h5>
+    <h5>&ndash;	@Html.ActionLink($"{added.Type}", "Details", new { id = added.FlavorId })</h5>
   }
 }
 <br />
-<p class="new"><a href='/flavors/create'>New <span class="material-symbols-outlined">Add_circle</span></a></p>
+<p class="new"><a href='/flavors/create'><span class="material-symbols-outlined">Add_circle</span></a></p>

@@ -15,8 +15,8 @@ else
 {
   @foreach(Treat added in Model)
   {
-    <h5>&rarr;	@Html.ActionLink($"{added.Name}", "Details", new { id = added.TreatId })</h5>
+    <h5>&ndash;	@Html.ActionLink($"{added.Name}", "Details", new { id = added.TreatId })</h5>
   }
 }
 <br />
-<p class="new"><a href='/treats/create'>New <span class="material-symbols-outlined">Add_circle</span></a></p>
+<p class="new"><a href='/treats/create'><span class="material-symbols-outlined">Add_circle</span></a></p>

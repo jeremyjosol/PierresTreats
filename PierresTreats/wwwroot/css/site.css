@@ -18,15 +18,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
-  font-size: 1.3em;
   color: rgb(49, 49, 49);
   background-attachment: fixed;
-  font-family: 'Playfair', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
 }
 
 body::before {
   content: "";
-  background: rgba(255, 255, 255, 0.722); 
+  background: rgba(255, 255, 255, 0.802); 
   position: absolute;
   top: 0;
   left: 0;
@@ -40,19 +40,20 @@ h1 {
   font-weight: bolder;
   margin: auto;
   margin-top: 5px;
-  margin-bottom: 25px;
   margin-left: 25px;
   font-family: 'Playfair Display', serif;
+  font-weight: lighter;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 h2 {
-  font-size: 50px;
+  font-family: 'Playfair Display', serif;
 }
 
 a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 #text-dark {
@@ -81,19 +82,12 @@ p {
   text-align: center;
   overflow: auto;
   padding-right: 17px;
+  padding-bottom: 120px;
   box-sizing: content-box;
 }
 
-.navigation {
-  margin: auto;
-  margin: 75px 0 0 1px;
-  height: 315px;
-  max-height: 350px;
-  width: 225px;
-  position: fixed;
-}
-
 .navbar-brand {
+  font-family: 'Playfair Display', serif;
   font-size: 38px;
 }
 
@@ -143,7 +137,7 @@ p {
   }
 
   .container h1 {
-    font-size: 65px;
+    font-size: 75px;
   }
 }
 
@@ -166,7 +160,7 @@ p {
 
   .container h1 {
     margin: auto;
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
@@ -189,7 +183,7 @@ p {
   }
 
   .container h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
@@ -212,7 +206,7 @@ p {
   }
 
   .container h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
@@ -235,7 +229,7 @@ p {
   }
 
   .container h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
@@ -259,7 +253,7 @@ p {
   }
 
   .container h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
@@ -282,13 +276,15 @@ p {
   }
 
   .container h1 {
-    font-size: 50px;
+    font-size: 75px;
   }
 }
 
 .form-control
 {
   text-align: center;
+  margin: auto;
+  width: 325px;
 }
 
 .btn {
