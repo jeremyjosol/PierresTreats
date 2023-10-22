@@ -18,7 +18,7 @@ Our v2 web platform offers Pierre, the owner of Pierre's Bakery, the opportunity
 <html>
 <img src="PierresTreats/wwwroot/img/CRUD.jpg">
 
-> A user can see the Index and full Details of a Treat or Flavor but only the Admin Role allows access to Add, Create, Update, and Delete actions.
+> All users can see the Index and full Details of a Treat or Flavor but only a user assigned to an Admin Role is allowed access to Add, Create, Update, and Delete actions. Furthermore, the 'X' feature is an additional Delete button that removes a JoinEntity's relationship.
 
 ## Technologies Used
 * _Github_
