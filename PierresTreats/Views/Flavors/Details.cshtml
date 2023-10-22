@@ -6,8 +6,8 @@
 @using PierresTreats.Models;
 
 <h3 class="name">@Html.DisplayFor(selectedFlavor => selectedFlavor.Type)</h3>
+<h3><em>Treats</em></h3>
 <hr/>
-<p><strong>Treats</strong></p>
 
 @if (Model.JoinEntities.Count == 0)
 {
@@ -21,7 +21,7 @@ else
     {
       @Html.Hidden("joinId", @available.TreatFlavorId)
       <p class="indent">
-        &rarr;  @Html.ActionLink($"{available.Treat.Name}", "Details", "Treats", new { id = available.TreatId})
+        @Html.ActionLink($"{available.Treat.Name}", "Details", "Treats", new { id = available.TreatId})
         <input type="submit" value="X" id="X" class="btn btn-outline-danger btn-sm"/>
       </p>
     }
