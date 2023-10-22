@@ -18,6 +18,7 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
       _db = db;
     }
+    
     public ActionResult Index()
     {
       ViewBag.Treats = _db.Treats.ToList();
