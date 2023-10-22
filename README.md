@@ -1,15 +1,24 @@
 # Pierres Treats
 
 ## About
-
-Lorem Ipsum
+Our v2 web platform offers Pierre, the owner of Pierre's Bakery, the opportunity to create a many-to-many relationship between Treats and a variety of Flavors. Pierre can manage his website with exclusive Admin privileges while customers that Register have limited access based on what Pierre decides to delegate their Role as.
 
 <html>
-<img src="PierresTreats/wwwroot/img/PierresIndexLogin.jpg">
+<img src="PierresTreats/wwwroot/img/Login.jpg">
 </html>
 
+> Users will be prompted to log in if they are not.
+
+
 <html>
-<img src="PierresTreats/wwwroot/img/PierresIndexUser.jpg">
+<img src="PierresTreats/wwwroot/img/LoggedIn.jpg">
+
+> Once logged in, the log in prompt will be omitted.
+
+<html>
+<img src="PierresTreats/wwwroot/img/CRUD.jpg">
+
+> A user can see the Index and full Details of a Treat or Flavor but only the Admin Role allows access to Add, Create, Update, and Delete actions.
 
 ## Technologies Used
 * _Github_
