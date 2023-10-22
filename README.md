@@ -58,6 +58,11 @@ Our v2 web platform offers Pierre, the owner of Pierre's Bakery, the opportunity
   > This command will initialize the repository's migrations to establish and maintain the database.
 6. In the production directory, you can enter the following command `dotnet watch run`.
   > This command will start the project in development mode with a watcher.
+7. Register for an account
+8. After successfully registering, visit the following route `https://localhost:5001/role` or click on the Admin icon on the bottom right of the screen
+8. From the Role route, click 'Create a Role'
+9. Create an 'Admin' Role to assign your registered account to
+  > You will now have full access to the features of this web application.
 
 ## Known Bugs
 
