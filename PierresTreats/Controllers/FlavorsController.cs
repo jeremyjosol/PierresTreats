@@ -27,12 +27,13 @@ namespace PierresTreats.Controllers
       return View(allFlavors);
     }
 
-     public ActionResult Create()
+    public ActionResult Create()
     {
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View();
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult Create(Flavor newFlavor)
     {
@@ -66,6 +67,7 @@ namespace PierresTreats.Controllers
       return View(flavorToAddTreatTo);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult AddTreat(Treat selectedTreat, Flavor selectedFlavor)
     {
@@ -86,6 +88,7 @@ namespace PierresTreats.Controllers
       return View(selectedFlavor);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult Edit(Flavor flavor)
     {
@@ -94,6 +97,7 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult DeleteJoin(int joinId)
     {
@@ -109,6 +113,7 @@ namespace PierresTreats.Controllers
       return View(selectedFlavor);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {

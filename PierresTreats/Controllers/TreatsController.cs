@@ -30,6 +30,7 @@ namespace SweetAndSavoryTreats.Controllers
       return View();
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult Create(Treat newTreat)
     {
@@ -63,6 +64,7 @@ namespace SweetAndSavoryTreats.Controllers
       return View(treatToAddFlavorTo);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult AddFlavor(Flavor selectedFlavor, Treat selectedTreat)
     {
@@ -84,6 +86,7 @@ namespace SweetAndSavoryTreats.Controllers
       return View(selectedTreat);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult Edit(Treat treat)
     {
@@ -92,6 +95,7 @@ namespace SweetAndSavoryTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public ActionResult DeleteJoin(int joinId)
     {
@@ -107,6 +111,7 @@ namespace SweetAndSavoryTreats.Controllers
       return View(selectedTreat);
     }
 
+    [Authorize(Roles = "Admin")]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
