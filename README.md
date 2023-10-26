@@ -9,7 +9,6 @@ Our v2 web platform offers Pierre, the owner of Pierre's Bakery, the opportunity
 
 > Users will be prompted to log in if they are not.
 
-
 <html>
 <img src="PierresTreats/wwwroot/img/LoggedIn.jpg">
 
@@ -56,13 +55,19 @@ Our v2 web platform offers Pierre, the owner of Pierre's Bakery, the opportunity
   > Be sure to replace the `{DATABASE}`, `{USERNAME}` and `{PASSWORD}` fields with your own relevant information. Do not include the curly brackets.
 5. In production directory, enter the following command `dotnet ef database update`. 
   > This command will initialize the repository's migrations to establish and maintain the database.
-6. In the production directory, you can enter the following command `dotnet watch run`.
+6. In the production directory, enter the following command `dotnet watch run`.
   > This command will start the project in development mode with a watcher.
-7. Register for an account
-8. After successfully registering, visit the following route `https://localhost:5001/role` or click on the Admin icon on the bottom right of the screen
-8. Click 'Create a Role'
-9. Create an 'Admin' Role to assign your registered account to
-  > You will now have full access to the features of this web application.
+7. Register for an account by visiting the following route `https://localhost:5001/account` or click on the Account icon within the navigation bar at the top of the page
+8. After successful registration, click 'Redirect back to Home' to return to the Home page
+9. From Home, you will see a prompt to log in as seen from the first image above, click 'log in'
+10. Log into your account
+11. After logging in, visit the following route `https://localhost:5001/role` or click on the Admin icon at the bottom right of the page
+12. Click 'Create a Role'
+13. From `https://localhost:5001/role/create`, enter `Admin` in the textbox and click 'Create'
+14. You will be redirected back to `https://localhost:5001/role`, from there, click 'Assign a Role'
+15. From `https://localhost:5001/role/assign`, click on the first select list '-- Select a User --' and select your account
+16. From the second select list, '-- Select a Role --', select the newly created Admin role to assign your account to and click 'Assign Role'
+  > Your account will now have full access to all features of this web application.
 
 ## Known Bugs
 
