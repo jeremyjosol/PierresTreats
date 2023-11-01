@@ -90,9 +90,16 @@ namespace SweetAndSavoryTreats.Controllers
     [HttpPost]
     public ActionResult Edit(Treat treat)
     {
-      _db.Treats.Update(treat);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if(!ModelState.IsValid)
+      {
+        return View(treat);
+      }
+      else
+      {
+        _db.Treats.Update(treat);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 
     [Authorize(Roles = "Admin")]

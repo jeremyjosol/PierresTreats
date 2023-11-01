@@ -92,9 +92,16 @@ namespace PierresTreats.Controllers
     [HttpPost]
     public ActionResult Edit(Flavor flavor)
     {
-      _db.Flavors.Update(flavor);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if(!ModelState.IsValid)
+      {
+        return View(flavor);
+      }
+      else
+      {
+        _db.Flavors.Update(flavor);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 
     [Authorize(Roles = "Admin")]

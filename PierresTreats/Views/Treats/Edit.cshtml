@@ -10,6 +10,7 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(selectedTreat => selectedTreat.TreatId)
+  @Html.ValidationMessageFor(selectedTreat => selectedTreat.Name, "", new { @class = "text-danger" })
   @Html.EditorFor(selectedTreat => selectedTreat.Name, new { htmlAttributes = new { @class = "form-control" } })
   <input type="submit" value="Save Changes" class="btn btn-outline-success" />
 }
